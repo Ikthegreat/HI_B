@@ -31,8 +31,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # apps
     'accounts',
     'movies',
+    'rest_framework',
+    # AUTH
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    # registration
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    # CORS
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,11 +53,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+AUTH_USER_MODEL = 'accounts.User' 
+REST_AUTH = { # 회원가입시 토큰 발급
+    'SESSION_LOGIN' : False, 
+}
+# 하나의 컨텐츠로 여러개의 도메인
+SITE_ID = 1
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -57,6 +75,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'server.urls'
 
