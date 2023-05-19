@@ -2,21 +2,48 @@
 from django.db import models
 from django.conf import settings
 
+
+
 class Genre(models.Model):
     genre_id = models.IntegerField(unique=True)
     genre_name = models.CharField(max_length=50)
 
-    # def __str__(self):
-    #     return str(self.genre_name)
+    def __str__(self):
+        return str(self.genre_name)
     
-
-class Movie(models.Model):
+class Upcoming_movie(models.Model):
     movie_id = models.IntegerField()
     title = models.CharField(max_length=100)
     released_date = models.DateField()
     vote_average = models.FloatField()
     overview = models.TextField()
-    poster_path = models.CharField(max_length=200)
+    poster_path = models.CharField(max_length=200, null = True)
+
+class Nowplaying_movie(models.Model):
+    movie_id = models.IntegerField()
+    title = models.CharField(max_length=100)
+    released_date = models.DateField()
+    vote_average = models.FloatField()
+    overview = models.TextField()
+    poster_path = models.CharField(max_length=200, null = True)
+
+class Select_movie(models.Model):
+    movie_id = models.IntegerField()
+    title = models.CharField(max_length=100)
+    # released_date = models.DateField()
+    vote_average = models.FloatField()
+    overview = models.TextField()
+    poster_path = models.CharField(max_length=200, null=True)
+    # genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+
+
+class Movie(models.Model): # 가장 많은게 들어갈 예정
+    movie_id = models.IntegerField()
+    title = models.CharField(max_length=100)
+    released_date = models.DateField()
+    vote_average = models.FloatField()
+    overview = models.TextField()
+    poster_path = models.CharField(max_length=200, null = True)
     # genre_ids = models.ManyToManyField(Genre)
 
 class Comment(models.Model):

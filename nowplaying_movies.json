@@ -1,0 +1,962 @@
+[
+	{
+		"pk": 502356,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 502356,
+			"title": "슈퍼 마리오 브라더스",
+			"released_date": "2023-04-05",
+			"vote_average": 7.6,
+			"overview": "따단-딴-따단-딴 ♫ 전 세계를 열광시킬 올 타임 슈퍼 어드벤처의 등장! 뉴욕의 평범한 배관공 형제 '마리오'와 ‘루이지’는 배수관 고장으로 위기에 빠진 도시를 구하려다 미스터리한 초록색 파이프 안으로 빨려 들어가게 된다. 파이프를 통해 새로운 세상으로 차원 이동하게 된 형제. 형 '마리오'는 뛰어난 리더십을 지닌 '피치'가 통치하는 버섯왕국에 도착하지만 동생 '루이지'는 빌런 '쿠파'가 있는 다크랜드로 떨어지며 납치를 당하고 ‘마리오’는 동생을 구하기 위해 ‘피치’와 ‘키노피오’의 도움을 받아 '쿠파'에 맞서기로 결심한다. 그러나 슈퍼스타로 세상을 지배하려는 그의 강력한 힘 앞에 이들은 예기치 못한 위험에 빠지게 되는데...!",
+			"poster_path": "/dlGyzCxbBQK1U2O5o31Z1hB6erc.jpg"
+		}
+	},
+	{
+		"pk": 882569,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 882569,
+			"title": "더 커버넌트",
+			"released_date": "2023-04-19",
+			"vote_average": 7.7,
+			"overview": "아프가니스탄에서 적들에게 습격을 받아 죽을뻔했던 미 육군 병사가 현지 통역사의 도움과 노력으로 살아나 미국으로 돌아가게 되는데, 그 통역사와 가족은 약속대로 미국으로 오지 못한 사실을 알게 되자, 자신이 직접 그 가족들을 구하기 위해 아프가니스탄으로 향한다.",
+			"poster_path": "/aX0H63vho7rZ9Rm3I567Zf00Z1t.jpg"
+		}
+	},
+	{
+		"pk": 649609,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 649609,
+			"title": "렌필드",
+			"released_date": "2023-04-07",
+			"vote_average": 7.1,
+			"overview": "정년 보장 + 평생 직장의 대가는 밤낮없는 24시간 FULL 근무? 사내 복지는 만성 피로, 불면증, 소화불량, 짙은 다크서클입니다! 불멸의 삶과 폭발적인 힘의 대가는 악당용 배민이 되는 것?! ‘드라큘라’에게 취업 사기를 당하고 24시간 밤낮없이 그에게 순결한 제물을 바치는 직속비서 ‘렌필드’는 남들과 다른 특별한 꼰대 상사에 점차 피폐해져 간다. 그러던 어느 날, 여느 때처럼 ‘드라큘라’에게 바칠 제물을 찾던 중 자신의 인생을 뒤바꿔줄 친구 ‘레베카’를 만나게 되고 지금껏 가슴 한 켠에 숨 죽여 있었던 퇴사의 희망을 발견하게 되는데.. 과연 퇴사 없는 종신계약에서 ‘렌필드’는 벗어날 수 있을까?  슈퍼 을(乙) ‘렌필드’, 자네 꿈이 뭔가? “이 지독한 관계에서 벗어나고 싶어요! 퇴사하겠습니다!”",
+			"poster_path": "/wJXgQ3FgVIyVUwdoaKoeobET3po.jpg"
+		}
+	},
+	{
+		"pk": 840326,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 840326,
+			"title": "시수",
+			"released_date": "2023-01-27",
+			"vote_average": 6.8,
+			"overview": "라플란드의 황야 깊은 곳에서 금을 찾던 아타미 코피는 나치 순찰대를 우연히 만나게 되고, 파괴되고 채굴된 라플란드 황야를 가로지르는 숨막히는 추격전이 시작된다.",
+			"poster_path": "/uCAaaAQEDrTllYR4dtsEsfQa8We.jpg"
+		}
+	},
+	{
+		"pk": 447277,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 447277,
+			"title": "인어공주",
+			"released_date": "2023-05-18",
+			"vote_average": 5.5,
+			"overview": "아틀란티카 바다의 왕 트라이튼의 사랑스러운 막내딸인 인어 에리얼은 늘 인간들이 사는 바다 너머 세상으로의 모험을 꿈꾼다. 어느 날, 우연히 바다 위로 올라갔다가 폭풍우 속 가라앉는 배에 탄 인간 에릭 왕자의 목숨을 구해준다. 갈망하던 꿈과 운명적인 사랑을 이루기 위해 용기를 낸 에리얼은 사악한 바다 마녀 울슐라와의 위험한 거래를 통해 다리를 얻게 된다. 드디어 바다를 벗어나 그토록 원하던 인간 세상으로 가게 되지만, 그 선택으로 에리얼과 아틀란티카 왕국 모두 위험에 처하게 되는데… 바닷속, 그리고 그 너머 아름다운 꿈과 사랑의 멜로디가 펼쳐진다!",
+			"poster_path": "/8k8tmcx5e6ShpackLnDswBo1tnB.jpg"
+		}
+	},
+	{
+		"pk": 700391,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 700391,
+			"title": "65",
+			"released_date": "2023-03-02",
+			"vote_average": 6.3,
+			"overview": "우주 비행 중 행성과의 치명적인 충돌이 일어난 후, 조종사 밀스와 유일한 탑승 생존자 코아는 6,500만 년 전 공룡의 시대 지구에 불시착한다.  모든 것이 위험과 죽음과 맞닿아 있는 상황, 그들은 거대한 행성과의 충돌 전, 반드시 지구를 탈출해야만 한다!",
+			"poster_path": "/o9ItQpKVvhGcAcJFyIpFM7YYKuv.jpg"
+		}
+	},
+	{
+		"pk": 1008005,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1008005,
+			"title": "La niña de la comunión",
+			"released_date": "2023-02-10",
+			"vote_average": 6.2,
+			"overview": "",
+			"poster_path": "/sGSzha9K65abyvzBwXXnSV2sHWV.jpg"
+		}
+	},
+	{
+		"pk": 536554,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 536554,
+			"title": "메간",
+			"released_date": "2022-12-28",
+			"vote_average": 7.4,
+			"overview": "교통사고로 부모를 잃고 혼자가 된 소녀 ‘케이디’. 로봇 엔지니어이자, ‘케이디’의 보호자가 된 ‘젬마’는 ‘케이디’를 안전하게 지켜야 하는 프로그램이 입력된 AI 로봇 ‘메간’을 선물한다. 메간은 언제나 ‘케이디’의 곁을 지켜주며 함께 웃고, 힘들 땐 위로해주는 둘도 없는 친구가 된다. 어느 날, ‘케이디’가 위험에 처하자 ‘메간’은 예측할 수 없는 방향으로 업그레이드되며 감당할 수 없는 일들이 벌어지는데…",
+			"poster_path": "/v0TtgXaZZ6NeDxKackgQK9byEDL.jpg"
+		}
+	},
+	{
+		"pk": 455476,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 455476,
+			"title": "세인트 세이야: 더 비기닝",
+			"released_date": "2023-04-27",
+			"vote_average": 6.4,
+			"overview": "슬럼가 격투장에서 싸우던 중 이상한 힘이 발현된 ‘세이야’가 자신이 아테나의 환생인 ‘시에나’를 지킬 운명임을 받아들이고 세상을 구하는 이야기",
+			"poster_path": "/fBNl8kpFMz5ugi3RGYfenKctzjq.jpg"
+		}
+	},
+	{
+		"pk": 667538,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 667538,
+			"title": "트랜스포머: 비스트의 서막",
+			"released_date": "2023-06-07",
+			"vote_average": 0,
+			"overview": "화려한 액션과 스펙터클로 전 세계를 사로잡은 영화 <트랜스포머> 시리즈의 신작 <트랜스포머: 비스트의 서막>은 1990년대의 지구를 배경으로 벌어지는 오토봇과 디셉티콘의 전투 그리고 새롭게 등장하는 캐릭터들인 맥시멀을 선보일 예정이다.",
+			"poster_path": "/chUZNPNd7EiETSB4xBGykXhuXRr.jpg"
+		}
+	},
+	{
+		"pk": 569094,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 569094,
+			"title": "스파이더맨: 어크로스 더 유니버스",
+			"released_date": "2023-05-31",
+			"vote_average": 0,
+			"overview": "새로운 스파이더맨 마일스 모랄레스(샤메익 무어)가 수많은 스파이더맨들과 함께 멀티버스 세계 속 다중 우주의 질서를 잡기 위해 빌런과 대결하는 이야기",
+			"poster_path": "/p2l6hOlyx1ZP6jt9wagthliVg9h.jpg"
+		}
+	},
+	{
+		"pk": 697843,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 697843,
+			"title": "익스트랙션 2",
+			"released_date": "2023-06-09",
+			"vote_average": 0,
+			"overview": "전작에서 겨우 살아남은 레이크. 호주 비밀 작전 용병으로 귀환한 그가 또다시 죽음의 문턱을 넘나드는 임무를 맡게 된다. 무자비한 조지아 갱스터의 가족이 구금됐다. 온갖 고초를 겪고 있는 그들을 감옥에서 구출하라.",
+			"poster_path": "/7gKI9hpEMcZUQpNgKrkDzJpbnNS.jpg"
+		}
+	},
+	{
+		"pk": 599019,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 599019,
+			"title": "빅트립2: 아기곰 배달 대작전",
+			"released_date": "2022-10-07",
+			"vote_average": 6.6,
+			"overview": "아기 팬더를 배달한 게 엊그제 같은데, 이번엔 아기 반달곰이 뚝! 떨어졌다. 그런데 무려, 동물왕국 대통령 후보의 아들이라고?! ‘믹믹’과 ‘오스카’는 동물왕국의 평화를 위해, 다시 한번 아기를 배달하기로 결심한다. 애니멀 특송단, 배달 시작합니다!",
+			"poster_path": "/t4KQRvKUsRTw66cRiGD2w65oKdo.jpg"
+		}
+	},
+	{
+		"pk": 942199,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 942199,
+			"title": "시뮬런트",
+			"released_date": "2023-03-29",
+			"vote_average": 6.2,
+			"overview": "",
+			"poster_path": "/kmDJhZIq1xnu5ZiMOlb0nHJH1qb.jpg"
+		}
+	},
+	{
+		"pk": 799379,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 799379,
+			"title": "늑대사냥",
+			"released_date": "2022-09-21",
+			"vote_average": 6.6,
+			"overview": "동남아시아로 도피한 인터폴 수배자들을 이송할 움직이는 교도소 프론티어 타이탄. 극악무도한 이들과 베테랑 형사들이 필리핀 마닐라 항구에 모이고 탈출을 꿈꾸는 종두, 한국으로 돌아가야만 하는 도일을 비롯해 이들은 각자의 목적과 경계심을 품고 탑승한다. 한국으로 향하던 중, 태평양 한 가운데에서 이들에게는 지금까지 보지 못한 극한의 상황과 마주하게 되는데…",
+			"poster_path": "/op2y1gvqKhAh4yAPLwc4PlX3XRv.jpg"
+		}
+	},
+	{
+		"pk": 643215,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 643215,
+			"title": "Astérix & Obélix : L'Empire du Milieu",
+			"released_date": "2023-02-01",
+			"vote_average": 4.8,
+			"overview": "",
+			"poster_path": "/hZvqv0iRg5S3Aqw3HjXw7gShG6g.jpg"
+		}
+	},
+	{
+		"pk": 605886,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 605886,
+			"title": "투 캐치 어 킬러",
+			"released_date": "2023-04-06",
+			"vote_average": 7,
+			"overview": "",
+			"poster_path": "/mFp3l4lZg1NSEsyxKrdi0rNK8r1.jpg"
+		}
+	},
+	{
+		"pk": 916386,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 916386,
+			"title": "Der Passfälscher",
+			"released_date": "2022-10-13",
+			"vote_average": 6.5,
+			"overview": "",
+			"poster_path": "/zgIL0Rr0vBi6TLO4blIXZAgLWwg.jpg"
+		}
+	},
+	{
+		"pk": 800301,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 800301,
+			"title": "왓츠 러브 갓 투 두 위드 잇?",
+			"released_date": "2023-01-26",
+			"vote_average": 6.3,
+			"overview": "",
+			"poster_path": "/14fGGPAL5PQxuesjO4CFoDJEH5G.jpg"
+		}
+	},
+	{
+		"pk": 717930,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 717930,
+			"title": "칸다하르",
+			"released_date": "2023-05-25",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/gVh7d9n9WtUS6VSEaRXpGSTyhHW.jpg"
+		}
+	},
+	{
+		"pk": 758336,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 758336,
+			"title": "러브 어게인",
+			"released_date": "2023-05-04",
+			"vote_average": 6.5,
+			"overview": "",
+			"poster_path": "/usfDx1g1eN9eZ8kxfrbLRkKVjit.jpg"
+		}
+	},
+	{
+		"pk": 893712,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 893712,
+			"title": "극장판 소드 아트 온라인 -프로그레시브- 짙은 어둠의 스케르초",
+			"released_date": "2022-10-22",
+			"vote_average": 6.5,
+			"overview": "세계 최초의 VRMMORPG <소드 아트 온라인>이 데스 게임으로 변하면서, 1만 명의 플레이어들이 게임 세계에 갇혀 버린 이후, 이미 한 달 이상이 경과했다. 강철의 부유성 '아인크라드' 제1층을 공략한 아스나는 키리토와 콤비를 맺고 최상층을 목표로 여행을 이어가고 있었다. 정보상 아르고의 협력도 더해져서, 공략은 순조롭게 진행되는 것 같았지만...\r '아인크라드' 공략을 선도하는 2대 길드의 대립이 발생하고, 새로운 위협이 아스나와 키리토를 끌어들이기 시작한다.",
+			"poster_path": "/1L904CSzPCEEpPcUoBWH4cjuGJW.jpg"
+		}
+	},
+	{
+		"pk": 536437,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 536437,
+			"title": "힙노틱",
+			"released_date": "2023-05-11",
+			"vote_average": 7.2,
+			"overview": "",
+			"poster_path": "/mv362kHXz4Yr33wtQhqfcJWFM8G.jpg"
+		}
+	},
+	{
+		"pk": 933419,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 933419,
+			"title": "챔피언스",
+			"released_date": "2023-03-09",
+			"vote_average": 6.9,
+			"overview": "고집 세고 다혈질인 마이너리그 농구 코치는 사회봉사 명령을 받고 장애인 올림픽 팀을 훈련시키게 되는데...",
+			"poster_path": "/yVgtsoXyTZBww7SWE4JE1U4Wcel.jpg"
+		}
+	},
+	{
+		"pk": 809787,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 809787,
+			"title": "마피아 마마",
+			"released_date": "2023-04-13",
+			"vote_average": 7.1,
+			"overview": "",
+			"poster_path": "/zi0Lrmtvhrz52VXUjwEKlXItF9q.jpg"
+		}
+	},
+	{
+		"pk": 982271,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 982271,
+			"title": "북 클럽: 넥스트 챕터",
+			"released_date": "2023-05-11",
+			"vote_average": 7,
+			"overview": "한동안 세상이 멈추면서 만나지 못했던 ‘북 클럽’ 4인방. 오랜만에 다시 모인 자리에서 ‘비비안’(제인 폰다)이 약혼 소식을 전하고 그런 ‘비비안’을 위한 싱글파티의 일환으로 이탈리아 여행을 계획한다. 로마부터 베니스까지, 불타는 청춘 못지 않게 여행하던 이들은 ‘비비안’이 주인공인 중요한 일정을 위해 마지막 여행지인 토스카나로 향한다. 그러나 이들 앞에 예상치 못한 일이 벌어지면서 발이 묶이는 위기에 처하는데…",
+			"poster_path": "/41HsTz7CorbVISVbO5WnFkt3cqo.jpg"
+		}
+	},
+	{
+		"pk": 949423,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 949423,
+			"title": "펄",
+			"released_date": "2022-09-16",
+			"vote_average": 7.4,
+			"overview": "펄은 몸이 불편한 아버지를 모시며 어머니와 함께 농장 일을 하며 살고 있다. 하지만 그녀에게 강한 꿈이 있었으니 바로 무용단의 댄서가 되는 것. 전장으로 자원 입대를 한 남편 하워드를 그리워 하는 펄에게 우연히 극장에서 만난 남자가 추파를 던지며 자신과 함께 유럽으로 갈 것을 제안한다. 내적 갈등에 혼란스러워 하는 펄, 게다가 어머니의 강압적인 행동으로 불화도 점점 커지게 된다. 새장에 갇혀 있는 새처럼 살아가는 펄에게  하나의 사건이 발생하게 되고, 마침내 그녀는 이성을 잃게 되는데...",
+			"poster_path": "/hQOtPXkgSsCgDuGoqTNbhvB4f7U.jpg"
+		}
+	},
+	{
+		"pk": 798286,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 798286,
+			"title": "보 이즈 어프레이드",
+			"released_date": "2023-04-14",
+			"vote_average": 7.3,
+			"overview": "엄마를 만나러 가야 하는 보의 기억과 환상, 현실이 뒤섞인 공포를 경험하게 되는 기이한 여정을 그린 영화.",
+			"poster_path": "/pU8F9qKSoiqcv1nnaYezBzp7MoZ.jpg"
+		}
+	},
+	{
+		"pk": 870518,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 870518,
+			"title": "생츄어리",
+			"released_date": "2023-04-06",
+			"vote_average": 8,
+			"overview": "",
+			"poster_path": "/yGQAZupyZgT2ESbBSMZ9R0OBToo.jpg"
+		}
+	},
+	{
+		"pk": 804095,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 804095,
+			"title": "파벨만스",
+			"released_date": "2022-11-11",
+			"vote_average": 7.8,
+			"overview": "난생 처음 극장에서 스크린을 마주한 순간부터 영화와 사랑에 빠진 소년 ‘새미’(가브리엘 라벨). 아빠 ‘버트’(폴 다노)의 8mm 카메라를 들고 일상의 모든 순간을 담기 위해 열중하던 새미는 우연히 필름에 포착된 가족의 비밀을 알게 되고 충격에 휩싸인다. 진실을 비추는 필름의 힘을 실감한 새미에게 크고 작은 삶의 변화가 일어나고 엄마 ‘밋지’(미셸 윌리엄스)의 응원으로 영화를 향한 열정은 더욱 뜨거워져만 가는데… 영원히 간직하고픈 기억, 영화의 모든 순간과 사랑에 빠진다!",
+			"poster_path": "/5CnS0yIkuLZbvUa0Nl4E5HIFxvs.jpg"
+		}
+	},
+	{
+		"pk": 10515,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 10515,
+			"title": "천공의 성 라퓨타",
+			"released_date": "1986-08-02",
+			"vote_average": 8,
+			"overview": "광산촌 슬랙 계곡의 기계 견습공인 고아 소년 파즈는 어느날 빛이 나는 목걸이를 한 채 하늘에서 떨어지던 소녀시타를 구해준다. 소녀는 대대로 전해져 오던 목걸이(비행석)로 인해 정부군과 해적 도라 일당들에게 쫓기고 있던 신세. 시타가 이들로부터 무사히 도망갈 수 있게 도와주던 중 파즈는 비행석과 하늘에 떠 있는 성 라퓨타가 실제로 존재한다는 사실을 알게 된다. 라퓨타의 존재를 믿고 있던 파즈는 시타와 함께 라퓨타를 찾기로 결심한다. 하지만 파즈와 시타는 그들을 쫓던 군대에게 잡히고, 시타는 정부 비밀 조사관인 무스카에게 파즈를 풀어주는 조건으로 협력을 약속하는데...",
+			"poster_path": "/6sOF31DzWgd9dTI1SEE76V2lCyx.jpg"
+		}
+	},
+	{
+		"pk": 890771,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 890771,
+			"title": "블랙 데몬",
+			"released_date": "2023-04-26",
+			"vote_average": 4.8,
+			"overview": "",
+			"poster_path": "/uiFcFIjig0YwyNmhoxkxtAAVIL2.jpg"
+		}
+	},
+	{
+		"pk": 796185,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 796185,
+			"title": "삼총사: 다르타냥",
+			"released_date": "2023-04-05",
+			"vote_average": 7.4,
+			"overview": "",
+			"poster_path": "/lm0pfF0HSLsSpFlhGCmR6Bhl8EE.jpg"
+		}
+	},
+	{
+		"pk": 803700,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 803700,
+			"title": "여덟 개의 산",
+			"released_date": "2022-12-21",
+			"vote_average": 7.9,
+			"overview": "여덟 개의 산과 바다를 여행하는 자와, 태산의 정상에 오른 자 중에 누가 더 큰 깨달음을 얻었을까? 멀리 네팔을 떠도는 피에트로는, 후자의 삶을 갈망했던 아버지와 산의 무게를 껴안은 친구 브루노의 삶을 생각한다.",
+			"poster_path": "/yzgP42SQVV9fy6habr2A7WyGkVr.jpg"
+		}
+	},
+	{
+		"pk": 1043565,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1043565,
+			"title": "마인드케이지",
+			"released_date": "2022-12-16",
+			"vote_average": 7.1,
+			"overview": "어느 날, 성당에 천사의 모습으로 정성스럽게 꾸며진 사체가 발견되고, 형사 ‘제이크’는 5년 전 자신이 잡아들인 살인마 르프브르, 일명 ‘예술가’라 불리는 연쇄 살인마를 떠올린다. 그를 모방한 모방 범죄라 판단한 형사 ‘메리’는 예술가를 찾아가 단서를 얻고자 하지만, 범인을 잡기 위한 수사는 점점 예술가에게 집중되고, 메리는 또 다른 살인을 막기 위해 다시 예술가를 찾아간다. 예술가는 메리에게 알 수 없는 발언을 하고, 메리는 예술가가 자신에게 건넨 조각상 속에서 메모를 발견하는데… 과연 메리는 연쇄 살인을 멈출 수 있을까?",
+			"poster_path": "/7o13ZIdznBn7ojCkncIfD1AXXCz.jpg"
+		}
+	},
+	{
+		"pk": 522925,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 522925,
+			"title": "달리랜드",
+			"released_date": "2023-05-19",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/4RE6PmgeE6Kz0fur2oiiYZ50R0c.jpg"
+		}
+	},
+	{
+		"pk": 1020910,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1020910,
+			"title": "Influencer",
+			"released_date": "2023-05-18",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/jgIJ42BPhslyCgEd3mEl4eKVTbc.jpg"
+		}
+	},
+	{
+		"pk": 869612,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 869612,
+			"title": "마스터 가드너",
+			"released_date": "2023-05-19",
+			"vote_average": 0,
+			"overview": "나블 로스는 남편을 떠나보낸 부유한 귀부인인 고용주 해버힐의 비위를 열성적으로 맞추며 그녀의 아름다운 사유지 땅을 가꾸는 데 여념이 없는 세심한 원예가다. 하지만 해버힐 부인이 거칠고 제멋대로인 자신의 조카 손녀를 그에게 떠맡기려 하면서 폭력으로 점철된 과거에 묻어 둔 그의 어두운 비밀들이 드러나기 시작한다.",
+			"poster_path": "/afkyHDaMblwX2F1zJzMrTnPsDUH.jpg"
+		}
+	},
+	{
+		"pk": 532408,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 532408,
+			"title": "부기맨",
+			"released_date": "2023-06-01",
+			"vote_average": 0,
+			"overview": "엄마의 죽음으로 슬픔에 잠겨있는 자매에게 무시무시한 초자연적 존재 '부기맨'이 나타나면서 벌어지는 일을 그린 영화",
+			"poster_path": "/gOIbC9Kd0szndrAeEaCwVM4u3rm.jpg"
+		}
+	},
+	{
+		"pk": 747188,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 747188,
+			"title": "애스터로이드 시티",
+			"released_date": "2023-06-09",
+			"vote_average": 0,
+			"overview": "할리우드 대표 비주얼리스트 웨스 앤더슨 감독의 신작으로, 가상의 사막 도시 ‘애스터로이드 시티’에 모인 이들이 우연한 사건으로 인해 도시에 격리되면서 벌어지는 이야기",
+			"poster_path": "/pOhkvb6t72jKN68eoX51GFv28C9.jpg"
+		}
+	},
+	{
+		"pk": 878361,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 878361,
+			"title": "빅 조지 포먼",
+			"released_date": "2023-04-27",
+			"vote_average": 6.7,
+			"overview": "",
+			"poster_path": "/fdVd6thTstt0MQ4dUC1IXiOXpxv.jpg"
+		}
+	},
+	{
+		"pk": 678287,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 678287,
+			"title": "마마듀크",
+			"released_date": "2022-04-28",
+			"vote_average": 5.4,
+			"overview": "사고뭉치 장난꾸러기 마마듀크. 따뜻한 마음씨를 지녔지만 늘 말썽이 끊이지 않는데. 화려한 도그 쇼 세계에서 빛나는 데 필요한 자질이 과연 마마듀크에게 있을까?",
+			"poster_path": "/3ILOmYo7dBnrrHU7E9hSBcCR7AV.jpg"
+		}
+	},
+	{
+		"pk": 573164,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 573164,
+			"title": "치킨 히어로 빌리: 황금 달걀 구출 작전",
+			"released_date": "2021-08-12",
+			"vote_average": 7.9,
+			"overview": "아내인 ‘디’가 황금알 남매인 ‘맥스’와 ‘울리’를 낳자, 수탉 ‘빌리’는 하늘을 날아갈 듯 기뻐한다. 그러나 기쁨도 잠시, 이 세상이 연약한 달걀에겐 너무 위험하다고 생각한 빌리는 사사건건 맥스와 울리를 쫓아다니며 과보호한다. 목장 주인이 달걀 경연 대회에 맥스와 울리를 데리고 나간 후, 마피아들이 남매를 탐내자 빌리의 걱정은 점차 커져만 간다. 그날 밤, 경연대회에서 마주쳤던 마피아가 목장에 침입하고, 두 남매를 납치하고 만다. 아프리카 콩고에서 열리는 경매 만찬 행사에 희귀한 알을 데려가 요리해 먹으려는 사악한 계획을 눈치챈 빌리와 친구들은 알들을 구하기 위해 구조대를 결성한다. 사자 왕이 다스리는 정글을 지나 인간의 요새를 뚫고, 빌리와 용감한 친구들은 다시 평화로운 목장으로 돌아올 수 있을까?",
+			"poster_path": "/ewrIYKTLaqerwznGzNhmqr0huTs.jpg"
+		}
+	},
+	{
+		"pk": 972230,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 972230,
+			"title": "메이비 아이 두",
+			"released_date": "2023-01-27",
+			"vote_average": 6,
+			"overview": "",
+			"poster_path": "/hy96dnwz562U3PhXMzJvKNPBGS.jpg"
+		}
+	},
+	{
+		"pk": 175,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 175,
+			"title": "그랑블루",
+			"released_date": "1988-05-10",
+			"vote_average": 7.5,
+			"overview": "그리스 작은 마을의 자크(장-마크 바)는 어린 시절 아버지를 잠수 사고로 잃고 바다와 돌고래를 가족으로 여기며 외롭게 성장한다. 그런 그에게 유일한 마을 친구인 엔조(장 르노)는 잠수 실력을 겨루는 경쟁대상이자 단 한 명의 우정을 다지는 친구. 그렇게 자크는 유일한 안식처인 바다와 돌고래, 그리고 엔조와 성장해 간다. 오랜 시간이 흘러 프리다이빙 챔피언인 엔조의 초대로 재회하게 된 두 사람. 그리고 자크는 대회에 참가하면서 보험사 조사원 조안나(로잔나 아퀘트)와 일생에 단 한번일지 모르는 눈부신 사랑에 빠진다. 마침내 대회에서 자크가 승리하게 되고 엔조는 패배를 인정하면서도 무리한 잠수를 시도하다 결국 자연 앞에 인간의 한계를 넘어서고 죽음에 이르게 되는데…",
+			"poster_path": "/63b8enDlpoU1bYcyVwBrDFotDAN.jpg"
+		}
+	},
+	{
+		"pk": 1030587,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1030587,
+			"title": "映画ドラえもん のび太と空の理想郷",
+			"released_date": "2023-03-03",
+			"vote_average": 7.3,
+			"overview": "",
+			"poster_path": "/3QhCNuPxgp3TWmSej9RmXzwWj9W.jpg"
+		}
+	},
+	{
+		"pk": 633844,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 633844,
+			"title": "사슴의 왕",
+			"released_date": "2021-10-28",
+			"vote_average": 6.5,
+			"overview": "한때 최강의 전사로 이름을 떨쳤던 반은 제국의 노예가 되어 소금광산에 갇히게 된다. 어느 날 밤, 갑작스레 들이닥친 들개의 습격에서 죽을 고비를 넘긴 반은 또 한 명의 살아남은 소녀 유나와 함께 소금광산을 탈출한다. 한편, 미지의 전염병 ‘미차르’의 원인과 치료법을 찾던 천재 의사 홋사르는 습격의 유일한 생존자 반에게 치료의 실마리가 있음을 직감한다. 반을 생포하기 위해 수수께끼의 여인 사에가 그를 뒤쫓기 시작하고, 살아남은 자와 살아남으려는 자들의 이해관계가 서로 교차하기 시작하는데….",
+			"poster_path": "/iYbHtTw14q07h8gM94djkhrg47E.jpg"
+		}
+	},
+	{
+		"pk": 829051,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 829051,
+			"title": "어바웃 마이 파더",
+			"released_date": "2023-05-25",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/gNn05j3NIZ0sCkara0PNU5dmkTn.jpg"
+		}
+	},
+	{
+		"pk": 967874,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 967874,
+			"title": "파더 앤 솔저",
+			"released_date": "2023-01-04",
+			"vote_average": 6,
+			"overview": "1917년, 바카리 디알로는 강제 징집된 17세 아들 티에르노의 곁을 지키기 위해 프랑스군에 입대한다. 두 사람은 함께 전선에 투입되고, 전쟁에 직면한다. 티에르노가 남자가 되는 법을 배우는 동안 바카리는 그가 무사히 돌아올 수 있도록 할 수 있는 모든 것을 한다.",
+			"poster_path": "/3kM3NzcsfxDqDRqpTdenSKj4ZGl.jpg"
+		}
+	},
+	{
+		"pk": 1098160,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1098160,
+			"title": "The Tank",
+			"released_date": "2023-04-21",
+			"vote_average": 4.8,
+			"overview": "",
+			"poster_path": "/rUgX2s9OmZfXw287SbSE9Re5p0D.jpg"
+		}
+	},
+	{
+		"pk": 396194,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 396194,
+			"title": "엔니오: 더 마에스트로",
+			"released_date": "2022-02-17",
+			"vote_average": 8.4,
+			"overview": "수많은 작품을 쓰고 엄청난 인기를 누린 20세기의 음악가 엔니오 모리꼬네에 대한 완전무결한 초상이다. 그는 500곡이 넘는 잊을 수 없는 영화 음악을 작곡했으며, 오스카상을 두 차례 수상하고, 전 세계 관객의 가장 큰 사랑을 받았다. 거장과의 긴 인터뷰에 더해 베르나르도 베르톨루치, 줄리아노 몬탈도, 마르코 벨로치오, 다리오 아르젠토, 타비아니 형제, 카를로 베르도네, 배리 레빈슨, 롤랑 조페, 올리버 스톤, 쿠엔틴 타란티노 같은 여러 아티스트 및 감독들의 증언을 통해 이를 보여 주는 다큐멘터리다. 픽션 장면들과 음악, 아카이브 이미지들을 모았다.",
+			"poster_path": "/sk4t0ttm61AhBKsTmHNXU5k7VZo.jpg"
+		}
+	},
+	{
+		"pk": 888479,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 888479,
+			"title": "타임 이즈 업 2",
+			"released_date": "2023-03-16",
+			"vote_average": 6.5,
+			"overview": "연인이 된 ‘비비안’과 ‘로이’는 미래를 함께 하기 위해, ‘로이’가 상속 받은 오래된 저택을 매각하기 위해 시칠리아에 간다. 바쁜 ‘로이’로 인해 혼자 남은 ‘비비안’은 우연히 ‘안나’를 치료해주고 친해진다. ‘로이’는 그런 ‘비비안’에게 마치 알고 있던 사람처럼 ‘안나’를 조심하라고 한다. ‘로이’의 행동이 과민반응이라고 생각하던 그때, ‘안나’에게서 ‘로이’와 똑같은 타투를 발견하게 되는데…",
+			"poster_path": "/ejQB1Fl9piVmsnXmgukbf2qTuAE.jpg"
+		}
+	},
+	{
+		"pk": 890215,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 890215,
+			"title": "유 허트 마이 필링스",
+			"released_date": "2023-05-26",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/do9UvkcDJeYbhYVoQPS00yOCYdc.jpg"
+		}
+	},
+	{
+		"pk": 931102,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 931102,
+			"title": "라이드 온",
+			"released_date": "2023-04-07",
+			"vote_average": 5.8,
+			"overview": "한때 잘 나갔던 전설의 스턴트맨 ‘루오’(성룡). 유일한 파트너마 ‘레드 헤어’가 경매에 부쳐질 위기에 처하자 어쩔 수 없이 소원했던 딸 ‘바오’(류호존)에게 연락해 도움을 청한다. ‘바오’는 자신의 변호사 남자친구 ‘미키’(곽기린)와 이를 해결하고자 하고, 조금씩 ‘루오’에게도 마음을 열어간다. 그러던 어느 날, ‘루오’가 ‘레드 헤어’를 지키기 위해 싸웠던 콤비 액션 영상이 SNS를 통해 화제를 모으게 되고, 유명 영화에 참여할 기회까지 찾아오는데…! 스턴트 생활을 청산하길 바라는 딸 ‘바오’와 인생 역전의 기회에서 고민하는 ‘루오’. 과연, 그는 가족과 커리어를 모두 지킬 수 있을 것인가?!",
+			"poster_path": "/8Rnnx17kOFL4mNchdJNzLSdlBZj.jpg"
+		}
+	},
+	{
+		"pk": 507903,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 507903,
+			"title": "스포일러 경고",
+			"released_date": "2022-12-02",
+			"vote_average": 7.5,
+			"overview": "",
+			"poster_path": "/zdXoC9hgPieyT2x3TXcZGeRbpJZ.jpg"
+		}
+	},
+	{
+		"pk": 955555,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 955555,
+			"title": "범죄도시 3",
+			"released_date": "2023-05-31",
+			"vote_average": 0,
+			"overview": "베트남 납치 살해범 검거 후 7년 뒤, 마석도는 새로운 팀원들과 함께 살인사건을 조사한다. 사건 조사 중, 마석도는 신종 마약 사건이 연루되었음을 알게 되고 수사를 확대한다. 한편, 마약 사건의 배후인 주성철은 계속해서 판을 키워가고 약을 유통하던 일본 조직과 리키까지 한국에 들어오며 사건의 규모는 점점 더 커져가는데...",
+			"poster_path": "/jbremGnsRR4XZMDj97YHt20isRP.jpg"
+		}
+	},
+	{
+		"pk": 647250,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 647250,
+			"title": "The Machine",
+			"released_date": "2023-05-25",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/e0A2P1foD02lxgrF5lFelD47MmU.jpg"
+		}
+	},
+	{
+		"pk": 963765,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 963765,
+			"title": "Extraña forma de vida",
+			"released_date": "2023-05-26",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/2A3QsP636j8gH8BcKOabFv7ECFS.jpg"
+		}
+	},
+	{
+		"pk": 1105313,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1105313,
+			"title": "Jeepers Creepers O Regresso",
+			"released_date": "2023-05-26",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/nRLg2dIpeFreDRcq47ueT0G55Gf.jpg"
+		}
+	},
+	{
+		"pk": 477018,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 477018,
+			"title": "9명의 번역가",
+			"released_date": "2019-12-20",
+			"vote_average": 6.5,
+			"overview": "화제의 베스트셀러 ‘디덜러스‘. 이 책의 마지막 장 출판을 위해 9개국의 번역가들이 고용된다. 결말 유출을 막기 위해 아무도 나갈 수 없는 지하 밀실에서 작업을 시작한 그들. 하지만 곧 첫 10페이지가 인터넷에 공개된다. 그리고 편집장 ‘에릭’에게 도착한 한 통의 메시지. \"돈을 보내지 않으면 다음 100페이지를 공개하겠다.” ‘에릭‘은 모든 수단을 동원해 범인을 찾으려 하고, 번역가들은 서로를 의심하기 시작하는데…",
+			"poster_path": "/ibKiIkDFAJTHx2H9dsGdAtzIrKV.jpg"
+		}
+	},
+	{
+		"pk": 985617,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 985617,
+			"title": "리얼리티",
+			"released_date": "2023-06-02",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/klWa9XVC3EHeOQZn2f0mzPGUq37.jpg"
+		}
+	},
+	{
+		"pk": 1058906,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1058906,
+			"title": "名探偵コナン 灰原哀物語～黒鉄のミステリートレイン～",
+			"released_date": "2023-01-06",
+			"vote_average": 5.7,
+			"overview": "",
+			"poster_path": "/quhqoIn0LaAs79uu5diocLS4IKS.jpg"
+		}
+	},
+	{
+		"pk": 8327,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 8327,
+			"title": "홀리 마운틴",
+			"released_date": "1973-11-29",
+			"vote_average": 7.6,
+			"overview": "예수를 닮은 한 사내. 이름 모를 기이하고도 그로테스크한 곳에 떨어졌다. 그는 벌거벗은 채로 난쟁이를 따라 얽히고 설킨 ‘세상’에 조금씩 눈을 뜨게 되고, 복잡한 세상을 정신없이 헤매던 그는 기묘한 여정에 들어서게 된다. 우선 사내는 우연히 신비의 지도자를 만나게 된다. 지도자를 통해 ‘연금술’의 능력을 배우면서 인정을 받게 된 그는 세상에서 가장 부유하고 영향력 있는 7명의 인물을 만난다. 이 7명의 인물들은 태양계의 행성들을 각각 수호하고 있다. 이후 예수를 닮은 사내와 지도자, 7명의 수행원들은 속세의 물건을 모두 버리고 신의 일을 대신하고 있는 불사의 현자들을 찾아 성스러운 산으로 길을 나선다.  그들이 성스러운 산을 오르기까지 과연 어떤 놀랄만한 사건들이 그들을 엄습해 올 것인가. 성스러운 산에 올라 깨달음을 얻기까지의 과정은 절대 쉽지 않다.",
+			"poster_path": "/c9zeOe1yr2aKHoKoyoEoTQp5Op9.jpg"
+		}
+	},
+	{
+		"pk": 13041,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 13041,
+			"title": "엘 토포",
+			"released_date": "1970-12-18",
+			"vote_average": 7.1,
+			"overview": "총잡이인 엘 토포는 어린 아들과 함께 사막을 횡단하다, 산적들에 의해 온 주민이 몰살당한 마을에 당도한다. 산적 두목의 여인이었던 마라와 사랑에 빠진 엘 토포는 그녀의 요구대로 사막의 총잡이들과 차례로 승부를 벌인다. 그러나 승부 도중 부상을 당한 엘 토포는 사막에 버려진다. 혼수상태에 빠진 그의 몸은 깊은 동굴로 옮겨지고, 오랜 시간이 지난 다음 깨어난다. 그곳에서 만난 난쟁이 여인과 함께 다시 마을에 나간 엘 토포는 수도승이 된 아들과 조우하고, 그들의 운명은 비극으로 치달아가는데...",
+			"poster_path": "/wAPQMH2TBBIcoGPQ7hf2jE0zL1l.jpg"
+		}
+	},
+	{
+		"pk": 813477,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 813477,
+			"title": "신 가면라이더",
+			"released_date": "2023-03-17",
+			"vote_average": 7.6,
+			"overview": "",
+			"poster_path": "/h8zP8C2mKFfwsHhNgxMzJeHEL4d.jpg"
+		}
+	},
+	{
+		"pk": 19738,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 19738,
+			"title": "소녀혁명 우테나 - Adolescence 묵시록",
+			"released_date": "1999-08-14",
+			"vote_average": 7.5,
+			"overview": "기숙사제의 전문학교 오오토리 학원에 전학 온 텐죠 우테나는 교내에서 '장미의 신부'라고 불리우는 소녀 히메미야 안시와 만나게 되고, 그 때문에 학생들간의 결투에 휘말려든다. 우테나는 점점 안시와 가까워지지만 그럴 수록 안시가 감추고 있던 비밀을 하나 둘 알아가게 된다. 결국 우테나는 안시와 함께 '바깥세계'로 탈출하기로 결심하는데...",
+			"poster_path": "/2qCsFvXwC1kUpUAvPDcusDoekQY.jpg"
+		}
+	},
+	{
+		"pk": 958335,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 958335,
+			"title": "Les Cyclades",
+			"released_date": "2023-01-11",
+			"vote_average": 6.1,
+			"overview": "",
+			"poster_path": "/7q7zosFps60Fd0IkVgdCQBTX19i.jpg"
+		}
+	},
+	{
+		"pk": 925943,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 925943,
+			"title": "생토메르",
+			"released_date": "2022-11-23",
+			"vote_average": 6.4,
+			"overview": "다큐멘터리 작가 알리스 디옵의 첫 장편 극영화다. 여성을 주제로 강의하면서 메디아의 현대적 버전을 저술하던 라마가 딸을 살해한 여성의 재판과 마주한다.",
+			"poster_path": "/h4bY0JFQNLbVIeS7phaBN2FPlpF.jpg"
+		}
+	},
+	{
+		"pk": 812635,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 812635,
+			"title": "슈발리에",
+			"released_date": "2023-04-06",
+			"vote_average": 6.3,
+			"overview": "",
+			"poster_path": "/4Hzh1wKPKSc4TBi7DaafNpyc44G.jpg"
+		}
+	},
+	{
+		"pk": 788977,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 788977,
+			"title": "보이 프롬 헤븐",
+			"released_date": "2022-10-26",
+			"vote_average": 6.8,
+			"overview": "대이맘 (수니파 이슬람 율법의 최고 권위자) 선거를 앞두고 이집트의 정치인들은 ‘최적임자’로 생각되는 인물이 반드시 선출될 수 있도록 발 빠르게 움직인다. 어부의 아들로 태어나 국비 장학금을 받고 카이로의 대학에 진학한 아담은 위협적인 권모술수가 난무하는 소용돌이에 휘말리게 된다.",
+			"poster_path": "/af4I0CX44HwabTmh2WcafQoJ23R.jpg"
+		}
+	},
+	{
+		"pk": 1004663,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1004663,
+			"title": "낸 골딘, 모든 아름다움과 유혈사태",
+			"released_date": "2022-11-23",
+			"vote_average": 7.5,
+			"overview": "세계적으로 유명한 예술가이자 활동가인 낸 골딘에 대한 서사시적이고 감성적인 이야기다. 낸 골딘의 신기원적 사진들, 슬라이드 쇼 작품, 사적 인터뷰, 희귀 영상 등을 통해 새클러 가에 마약성 진통제 과다 복용 사태 책임을 묻기 위해 나섰던 그녀의 투쟁을 보여 준다.",
+			"poster_path": "/cvO51xxtIUHc5w5ZgFsigiFaUaO.jpg"
+		}
+	},
+	{
+		"pk": 986070,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 986070,
+			"title": "The Wrath of Becky",
+			"released_date": "2023-05-26",
+			"vote_average": 0,
+			"overview": "",
+			"poster_path": "/q9lkLs0cVehvx0ay0i2T4ACS4OJ.jpg"
+		}
+	},
+	{
+		"pk": 666277,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 666277,
+			"title": "전생",
+			"released_date": "2023-06-02",
+			"vote_average": 0,
+			"overview": "유년 시절 한국에서 알게 된 노라와 해성이 노라가 캐나다로 이민을 가며 헤어졌다가, 20여년 만에 미국 뉴욕에서 재회하며 벌어지는 이야기를 담은 작품이다.",
+			"poster_path": "/gXt3eVpaBq6q9SaLDrgSnzsUyIl.jpg"
+		}
+	},
+	{
+		"pk": 916405,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 916405,
+			"title": "말없는 소녀",
+			"released_date": "2022-05-13",
+			"vote_average": 7.6,
+			"overview": "1981년, 아일랜드의 한 작은 마을에 살고 있는 어린 소녀 카이트는 가난으로 당장 그녀를 돌볼 수 없게 된 그녀의 어머니에 의해 당분간 거의 남이라고 할 수 있는 먼 친척 부부에게 맡겨지게 된다. 영문도 모른 채 생전 처음 본 부부와 함께 살게 된 카이트는 새로운 환경이 낯설기만 하다. 자신을 따뜻하게 맞이해주는 아내 에이블린과는 그런대로 잘 지내지만, 무뚝뚝한 남편 션은 이 모든게 못마땅해 보인다. 하지만 그런 션도 카이트의 순수함에 조금씩 마음의 문을 열기 시작하고, 어느새 이들 사이엔 떼어놓기 힘든 특별한 우정이 싹튼다.",
+			"poster_path": "/mI0CG9jC4CSeBlTghVf0qoEXWsf.jpg"
+		}
+	},
+	{
+		"pk": 848958,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 848958,
+			"title": "Les Amandiers",
+			"released_date": "2022-11-16",
+			"vote_average": 6.8,
+			"overview": "",
+			"poster_path": "/oFNR1R5PTQFC5j6EZRMv2TpeHco.jpg"
+		}
+	},
+	{
+		"pk": 851977,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 851977,
+			"title": "UFO를 찾아서",
+			"released_date": "2023-04-01",
+			"vote_average": 7.1,
+			"overview": "빈털터리 중년 남성 탕즈쥔은 SF 잡지의 편집장이다. 평생 그를 애먹여온 의문은 외계인을 찾기 위한 또 다른 여정으로 그를 이끈다.",
+			"poster_path": "/fNob8lLujDY06LRhBO2wWNvXZUj.jpg"
+		}
+	},
+	{
+		"pk": 794602,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 794602,
+			"title": "백조의 노래",
+			"released_date": "2021-08-06",
+			"vote_average": 7.4,
+			"overview": "오하이오주의 샌더스키의 사교계 명사들의 스타일리스트였고 지역 클럽 공연의 아이콘이었던 팻은 은퇴 후 요양원에서 삶을 포기한 채 살고 있다. 어느 날, 팻은 최근에 사망한 친한 고객의 마지막 소원이 그가 그녀의 장례식 화장을 해주는 것이었다는 이야기를 전해 듣는다. 이 이야기는 팻에게 새로운 삶의 목표를 만들어 준다. 그는 그녀를 만나기 위한 긴 여행을 시작한다.",
+			"poster_path": "/tf63pGGx3qdCj11xqJ8Ae3scTb.jpg"
+		}
+	},
+	{
+		"pk": 1008048,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 1008048,
+			"title": "하우 투 블로우 업 어 파이프라인",
+			"released_date": "2023-04-07",
+			"vote_average": 6.7,
+			"overview": "",
+			"poster_path": "/gDGRf1rzIxV0ROKIeEBFDMoDBDh.jpg"
+		}
+	},
+	{
+		"pk": 788734,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 788734,
+			"title": "해시태그 시그네",
+			"released_date": "2022-09-30",
+			"vote_average": 7.1,
+			"overview": "카페 바리스타로 따분한 인생을 살던 시그네에겐 행위 예술가로 매거진 표지를 장식한 남자친구 토마스가 있다.  점점 유명해지는 토마스 옆에서 자꾸만 소외당하던 시그네는 인터넷에서 발견한 정체불명의 알약으로 남자친구의 사랑은 물론, 세상의 관심까지 독차지할 황당한 계획을 세운다.",
+			"poster_path": "/zDLZSUhJS5AJK4ilYWS66U5AH9C.jpg"
+		}
+	},
+	{
+		"pk": 844409,
+		"model": "movies.nowplaying_movie",
+		"fields": {
+			"movie_id": 844409,
+			"title": "The Unlikely Pilgrimage of Harold Fry",
+			"released_date": "2023-04-28",
+			"vote_average": 2,
+			"overview": "",
+			"poster_path": "/pmP1Z6qKYCTLZH2JKqxltwAZHSY.jpg"
+		}
+	}
+]

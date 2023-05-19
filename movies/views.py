@@ -2,19 +2,50 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404, redirec
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-
-from .models import Movie, Comment
+from django.http import JsonResponse
+from .models import *
 from .serializers import MovieListSerializer, CommentListSerializer, MovieSerializer, CommentSerializer
+import random
+import requests
+import json
 # Create your views here.
 
 @api_view(['GET', 'POST'])
 def main(request):
     if request.method == 'GET':
-        movies = get_list_or_404(Movie)
-        serializer = MovieListSerializer(movies, many=True)
-        ### 여기서 부터
-        movies_lst = []
+        # upcoming data (0,4)
+        upcoming_movies = get_list_or_404(Upcoming_movie)
+        serializer = MovieListSerializer(upcoming_movies, many=True)
+        data = serializer.data
+        random_movies_data = random.sample(data,5) # upcoming중 5개 선택
+
+        # 사용자 기반 키워드 영화
+
+        # nowplaying data (5,9)
+        nowplaying_movies = get_list_or_404(Nowplaying_movie)
+        serializer = MovieListSerializer(nowplaying_movies, many = True)
+        data = serializer.data
+        nowplaying_data = random.sample(data,5)
+        for m in nowplaying_data:
+            random_movies_data.append(m)
+
+        # 사람들이 좋아요 많이한 영화 5개
+
         
+        return JsonResponse(random_movies_data, safe=False)
+        # return Response(data)
+    elif request.method == 'POST':
+        serializer = MovieListSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET', 'POST'])
+def select(request):
+    if request.method == 'GET':
+        movies = get_list_or_404(Movie)
+        select_movies = movies[:20]
+        serializer = MovieListSerializer(select_movies, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
