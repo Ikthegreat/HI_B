@@ -15,7 +15,7 @@ class MovieListSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = User
-            fields = ('pk',)
+            fields = ('pk','username')
     like_user = UserSerializer(read_only = True, many = True)
 
     class Meta:
