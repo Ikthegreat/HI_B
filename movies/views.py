@@ -11,6 +11,7 @@ from .serializers import (
     CommentSerializer,
 )
 import random
+import requests
 
 # Create your views here.
 
@@ -25,7 +26,25 @@ def main(request):
         random_movies_data = random.sample(data, 5)  # upcoming중 5개 선택
 
         # 사용자 기반 키워드 영화
+        select_response = select(request)
+        select_movie_ids = select_response.data["selected_movie_ids"]
+        all_movies = get_list_or_404(Movie)
+        serializer = MovieListSerializer(all_movies, many=True)
+        all_data = serializer.data
+        like_keywords = []
+        for movie_id in select_movie_ids:
+            url = f"https://api.themoviedb.org/3/movie/{movie_id}/keywords"
 
+            headers = {
+                "accept": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZmQ1M2FlY2QyNzA2ZTk0ODY4MDg1MGQ2ZjU4MTFhNyIsInN1YiI6IjYzZDIwM2NjZmJhNjI1MDA5ZGU5OGQzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H_-DEfImhV3nDonoaVeNuu-ya8KT8FxU0wesg-zT0Fg",
+            }
+
+            response = requests.get(url, headers=headers).text
+            for keyword in response.keywords:
+                like_keywords.append(keyword.id)
+
+        return JsonResponse(like_keywords, safe=False)
         # nowplaying data (5,9)
         nowplaying_movies = get_list_or_404(Nowplaying_movie)
         serializer = MovieListSerializer(nowplaying_movies, many=True)
@@ -54,7 +73,12 @@ def select(request):
         serializer = MovieListSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            selected_movies = serializer.data
+            movie_ids = [movie["id"] for movie in selected_movies]
+            return Response(
+                {"selected_movie_ids": movie_ids}, status=status.HTTP_201_CREATED
+            )
+            # return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 @api_view(["GET", "DELETE", "PUT"])
