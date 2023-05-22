@@ -51,14 +51,14 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
-    profile_img = serializers.ImageField(allow_null=True, required=False)
+    profileimage = serializers.ImageField(allow_null=True, required=False)
 
     class MovieSerializer(serializers.ModelSerializer):
         class Meta:
             model = Movie
             fields = "__all__"
 
-    like_movies = MovieSerializer(many=True)
+    # like_movies = MovieSerializer(many=True)
 
     class Meta:
         model = User
@@ -66,14 +66,14 @@ class UserSerializer(serializers.ModelSerializer):
             "id",
             "username",
             "email",
-            "profile_img",
+            "profileimage",
             "followings",
             "followers",
-            "like_movies",
+            # "like_movies",
         )
 
 
 class UserImgSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("profile_img", "id")
+        fields = ("profileimage", "id")
