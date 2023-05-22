@@ -1,0 +1,12 @@
+import os
+import requests
+import json
+from movies.models import Movie
+
+
+def get_keywords_datas():
+    movies = Movie.objects.all()
+    print(movies)
+
+
+get_keywords_datas()
