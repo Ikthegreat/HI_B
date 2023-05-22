@@ -10,8 +10,6 @@ class Genre(models.Model):
         return str(self.genre_name)
 
 
-class Keyword(models.Model):
-    Keyword_id = models.IntegerField(primary_key=True)
 
 
 class Upcoming_movie(models.Model):
@@ -41,17 +39,18 @@ class Select_movie(models.Model):
     poster_path = models.CharField(max_length=200, null=True)
     # genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
 
+class Keyword(models.Model):
+    keyword_name = models.CharField(max_length=100)
+    keyword_id = models.IntegerField(primary_key=True)
 
-class Movie(models.Model):  # 가장 많은게 들어갈 예정
+class Movie(models.Model):
     movie_id = models.IntegerField()
     title = models.CharField(max_length=100)
     released_date = models.DateField()
     vote_average = models.FloatField()
     overview = models.TextField()
     poster_path = models.CharField(max_length=200, null=True)
-    # genre_ids = models.ManyToManyField(Genre)
-    keywords = models.ManyToManyField(Keyword)
-
+    keywords = models.ManyToManyField(Keyword, related_name="movies")
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

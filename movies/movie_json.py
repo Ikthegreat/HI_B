@@ -11,8 +11,13 @@ def get_movie_datas():
         request_url = f"https://api.themoviedb.org/3/movie/popular?api_key=cfd53aecd2706e948680850d6f5811a7&language=ko-KR&page={i}"
         print(request_url)
         movies = requests.get(request_url).json()
-        print(movies)
         for movie in movies['results']:
+            url = f"https://api.themoviedb.org/3/movie/{movie['id']}/keywords?api_key=cfd53aecd2706e948680850d6f5811a7"
+            response = requests.get(url)
+            if response.status_code == 200:
+                data = response.json()
+                keywords = data['keywords']
+                keyword_list = [keyword['name'] for keyword in keywords]
             if movie.get('release_date', ''):
                 fields = {
                     'movie_id': movie['id'],
@@ -21,6 +26,7 @@ def get_movie_datas():
                     'vote_average': movie['vote_average'],
                     'overview': movie['overview'],
                     'poster_path': movie['poster_path'],
+                    'keywords': keyword_list,
                 }
 
                 data = {
