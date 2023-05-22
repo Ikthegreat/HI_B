@@ -80,7 +80,7 @@ def main(request):
         nowplaying_data = random.sample(data, 5)
         # 사람들이 좋아요 많이한 영화 5개
 
-        return JsonResponse(random_movies_data, safe=False)
+        return JsonResponse((random_movies_data, nowplaying_data), safe=False)
         # return Response(data)
     elif request.method == "POST":
         serializer = MovieListSerializer(data=request.data)
