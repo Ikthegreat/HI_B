@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from movies.models import Movie
-from accounts.models import Profile
+from accounts.models import *
 
 # from movies.serializers import MovieSerializer
 User = get_user_model()
