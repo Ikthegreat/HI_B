@@ -29,7 +29,8 @@ def main(request):
         # nowplaying data (5,9)
         nowplaying_movies = get_list_or_404(Nowplaying_movie)
         serializer = MovieListSerializer(nowplaying_movies, many=True)
-        data = serializer.data[:5]
+        data = serializer.data
+        nowplaying_data = random.sample(data, 5)
         # 사람들이 좋아요 많이한 영화 5개
 
         return JsonResponse(random_movies_data, nowplaying_data, safe=False)
