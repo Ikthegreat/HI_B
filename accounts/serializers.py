@@ -51,6 +51,8 @@ User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
+    profile_img = serializers.ImageField(allow_null=True, required=False)
+
     class MovieSerializer(serializers.ModelSerializer):
         class Meta:
             model = Movie
