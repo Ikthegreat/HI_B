@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404, redirect
 from rest_framework.response import Response
-
+from operator import itemgetter
 # from rest_framework.request import Request
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -38,9 +38,45 @@ def main(request):
         # 여기서 세개의 movie_id를 filter 활용해서 movie_keyword를 뒤져서 해당 키워드들을 저장함
         # 그 다음에 각각의 movie_id를 돌면서 keyword_id랑 이중 for문 돌면서 같으면 cnt +=1 하고 다돌면
         # cnt랑 movie_id랑 같이 저장해 다돌면 cnt기준으로 sort해서 가장 높은 순대로 5개를 새로운 recommend model에 저장해
-        all_movies = list(Movie.objects.all().values())
-        return JsonResponse(keywords.values(), safe=False)
-        # return JsonResponse(all_movies[0], safe=False)
+        # return JsonResponse(all_movies, safe=False)
+        # Movie 모델의 인스턴스를 가져옴
+        movies = Movie.objects.all()
+
+        # 각 Movie 인스턴스에 대해 keyword_id를 리스트로 저장할 딕셔너리 생성
+        keyword_dict = {}
+
+        # movies를 순회하면서 딕셔너리에 키-값 쌍 추가
+        for movie in movies:
+            movie_id = movie.movie_id
+            keyword_ids1 = movie.keywords.values_list("keyword_id", flat=True)
+
+            # 키워드의 개수가 0인 경우 스킵
+            if len(keyword_ids1) == 0:
+                continue
+
+            # 이미 해당 movie_id의 키가 딕셔너리에 있는 경우에는 키에 해당하는 리스트에 keyword_ids를 추가
+            if movie_id in keyword_dict:
+                keyword_dict[movie_id].extend(keyword_ids1)
+            # 해당 movie_id의 키가 딕셔너리에 없는 경우에는 새로운 키를 만들고 keyword_ids를 리스트로 초기화
+            else:
+                keyword_dict[movie_id] = list(keyword_ids1)
+        # return JsonResponse(keyword_dict, safe= False)            
+        
+        recommend_data = []
+
+        # keyword_dict를 순회하면서 공통 요소 개수를 계산
+        for movie_id, keyword_id in keyword_dict.items():
+            common_keywords = set(keyword_id).intersection(set(keyword_ids))
+            common_count = len(common_keywords)
+            recommend_data.append({'movie_id': movie_id, 'common_count': common_count})
+
+        # recommend_data를 공통 요소 개수를 기준으로 내림차순 정렬
+        recommend_data = sorted(recommend_data, key=lambda x: x['common_count'], reverse=True)
+
+        # 상위 5개 추천 결과를 JsonResponse로 반환
+        return JsonResponse(recommend_data[:5], safe=False)
+        # recommend_data = sorted(recommend_data, key=itemgetter('common_count'), reverse=True)
+        # return JsonResponse(recommend_data, safe=False)
         
         serializer = MovieListSerializer(all_movies, many=True)
         serialized_movies = serializer.data
