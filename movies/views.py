@@ -146,12 +146,12 @@ def movie_detail(request, movie_pk):
 @api_view(["POST"])
 def like_movie(request, movie_pk):
     if request.user.is_authenticated:
-        movie = Movie.objects.get(pk=movie_pk)
-        if movie.like_users.filter(pk=request.user.pk).exists():
-            movie.like_users.remove(request.user)
+        movie = get_object_or_404(Movie, pk=movie_pk)
+        if movie.like_movies.filter(pk=request.user.pk).exists():
+            movie.like_movies.remove(request.user)
             is_liked = False
         else:
-            movie.like_users.add(request.user)
+            movie.like_movies.add(request.user)
             is_liked = True
         context = {
             "is_liked": is_liked,
