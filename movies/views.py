@@ -28,11 +28,8 @@ def main(request):
         random_movies_data = random.sample(data, 5)  # upcoming중 5개 선택
 
         # 사용자 기반 키워드 영화
-        # select_movies = Select_movie.objects.all()
-        # select_movie_ids = [movie.movie_id for movie in select_movies]
-        select_movie_ids = [
-            502356,
-        ]
+        select_movies = Select_movie.objects.all()
+        select_movie_ids = [movie.movie_id for movie in select_movies]
         # select_movie_ids의 값과 일치하는 keyword_id를 갖는 키워드들을 가져옴
         keywords = Keyword.objects.filter(
             movies__movie_id__in=select_movie_ids
@@ -41,7 +38,10 @@ def main(request):
         # 여기서 세개의 movie_id를 filter 활용해서 movie_keyword를 뒤져서 해당 키워드들을 저장함
         # 그 다음에 각각의 movie_id를 돌면서 keyword_id랑 이중 for문 돌면서 같으면 cnt +=1 하고 다돌면
         # cnt랑 movie_id랑 같이 저장해 다돌면 cnt기준으로 sort해서 가장 높은 순대로 5개를 새로운 recommend model에 저장해
-        all_movies = Movie.objects.all()
+        all_movies = list(Movie.objects.all().values())
+        return JsonResponse(keywords.values(), safe=False)
+        # return JsonResponse(all_movies[0], safe=False)
+        
         serializer = MovieListSerializer(all_movies, many=True)
         serialized_movies = serializer.data
 
@@ -109,7 +109,7 @@ def select(request):
         return Response(serializer.data)
 
     elif request.method == "POST":
-        for selected in request.data['movie_id']:
+        for selected in request.data["movie_id"]:
             movie = get_object_or_404(Movie, id=selected)
             select_movie = Select_movie(
                 movie_id=movie.movie_id,
@@ -119,7 +119,7 @@ def select(request):
                 poster_path=movie.poster_path,
             )
             select_movie.save()
-        return Response(select_movie, status=status.HTTP_201_CREATED)
+        return Response("Success")
         # return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
