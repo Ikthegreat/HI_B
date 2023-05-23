@@ -28,8 +28,16 @@ def main(request):
         random_movies_data = random.sample(data, 5)  # upcoming중 5개 선택
 
         # 사용자 기반 키워드 영화
-        select_movies = Select_movie.objects.all()
-        select_movie_ids = [movie.movie_id for movie in select_movies]
+        # select_movies = Select_movie.objects.all()
+        # select_movie_ids = [movie.movie_id for movie in select_movies]
+        select_movie_ids = [
+            502356,
+        ]
+        # select_movie_ids의 값과 일치하는 keyword_id를 갖는 키워드들을 가져옴
+        keywords = Keyword.objects.filter(
+            movies__movie_id__in=select_movie_ids
+        ).distinct()
+        keyword_ids = list(keywords.values_list("keyword_id", flat=True))
         # 여기서 세개의 movie_id를 filter 활용해서 movie_keyword를 뒤져서 해당 키워드들을 저장함
         # 그 다음에 각각의 movie_id를 돌면서 keyword_id랑 이중 for문 돌면서 같으면 cnt +=1 하고 다돌면
         # cnt랑 movie_id랑 같이 저장해 다돌면 cnt기준으로 sort해서 가장 높은 순대로 5개를 새로운 recommend model에 저장해
@@ -101,24 +109,18 @@ def select(request):
         return Response(serializer.data)
 
     elif request.method == "POST":
-        serializer = MovieListSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            selected_movies = serializer.data
-            movie_ids = [movie["id"] for movie in selected_movies]  # movie_id로 해야하는가?
-            for movie in selected_movies:
-                select_movie = Select_movie(
-                    movie_id=movie["id"],
-                    title=movie["title"],
-                    vote_average=movie["vote_average"],
-                    overview=movie["overview"],
-                    poster_path=movie["poster_path"],
-                )
-                select_movie.save()
-            return Response(
-                {"selected_movie_ids": movie_ids}, status=status.HTTP_201_CREATED
+        for movie_id in request.data:
+            movie = get_object_or_404(Movie, id=movie_id)
+            select_movie = Select_movie(
+                movie_id=movie.id,
+                title=movie.title,
+                vote_average=movie.vote_average,
+                overview=movie.overview,
+                poster_path=movie.poster_path,
             )
-            # return Response(serializer.data, status=status.HTTP_201_CREATED)
+            select_movie.save()
+        return Response(select_movie, status=status.HTTP_201_CREATED)
+        # return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 @api_view(["GET", "DELETE", "PUT"])
