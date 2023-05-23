@@ -2,6 +2,7 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404, redirec
 from rest_framework.response import Response
 from operator import itemgetter
 # from rest_framework.request import Request
+from django.contrib.auth.decorators import login_required
 from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import JsonResponse
@@ -14,7 +15,7 @@ from .serializers import (
 )
 import random
 import requests
-
+from accounts.models import UserSelectMovie
 # Create your views here.
 
 
@@ -68,8 +69,9 @@ def main(request):
         for movie_id, keyword_id in keyword_dict.items():
             common_keywords = set(keyword_id).intersection(set(keyword_ids))
             common_count = len(common_keywords)
-            recommend_data.append({'movie_id': movie_id, 'common_count': common_count})
-
+            if movie_id not in select_movie_ids:
+                recommend_data.append({'movie_id': movie_id, 'common_count': common_count})
+            
         # recommend_data를 공통 요소 개수를 기준으로 내림차순 정렬
         recommend_data = sorted(recommend_data, key=lambda x: x['common_count'], reverse=True)
 
@@ -135,7 +137,7 @@ def main(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-
+# @login_required
 @api_view(["GET", "POST"])
 def select(request):
     if request.method == "GET":
@@ -145,6 +147,7 @@ def select(request):
         return Response(serializer.data)
 
     elif request.method == "POST":
+        user_id = request.user.id
         for selected in request.data["movie_id"]:
             movie = get_object_or_404(Movie, id=selected)
             select_movie = Select_movie(
@@ -155,7 +158,27 @@ def select(request):
                 poster_path=movie.poster_path,
             )
             select_movie.save()
+            user_select_movie = UserSelectMovie(
+                user_id=user_id,
+                select_movie_id=movie.movie_id,
+            )
+            user_select_movie.save()
         return Response("Success")
+    # elif request.method == "POST":
+        # user_id = request.user.id  # 현재 인증된 사용자의 ID를 가져옴
+
+        # for selected in request.data["movie_id"]:
+        #     movie = get_object_or_404(Movie, id=selected)
+
+        #     select_movie = UserSelectMovie(
+        #         user_id=user_id,
+        #         select_movie=movie,
+        #     )
+        #     select_movie.save()
+
+        # return Response("Success")
+
+
         # return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 

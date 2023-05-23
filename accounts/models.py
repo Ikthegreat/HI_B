@@ -24,7 +24,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
-
+from movies.models import Select_movie
 # Create your models here.
 
 
@@ -33,3 +33,8 @@ class User(AbstractUser):
         "self", symmetrical=False, related_name="followers"
     )
     profileimage = models.ImageField(blank=True)
+    select_movies = models.ManyToManyField(Select_movie, related_name="select_movies")
+
+class UserSelectMovie(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    select_movie = models.ForeignKey(Select_movie, on_delete=models.CASCADE)
