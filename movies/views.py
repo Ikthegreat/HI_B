@@ -109,10 +109,10 @@ def select(request):
         return Response(serializer.data)
 
     elif request.method == "POST":
-        for movie_id in request.data:
-            movie = get_object_or_404(Movie, id=movie_id)
+        for selected in request.data['movie_id']:
+            movie = get_object_or_404(Movie, id=selected)
             select_movie = Select_movie(
-                movie_id=movie.id,
+                movie_id=movie.movie_id,
                 title=movie.title,
                 vote_average=movie.vote_average,
                 overview=movie.overview,
