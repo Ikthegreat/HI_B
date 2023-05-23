@@ -48,11 +48,11 @@ class Movie(models.Model):
 
 class Select_movie(models.Model):
     movie_id = models.IntegerField()
-    # title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     # released_date = models.DateField()
-    # vote_average = models.FloatField()
-    # overview = models.TextField()
-    # poster_path = models.CharField(max_length=200, null=True)
+    vote_average = models.FloatField()
+    overview = models.TextField()
+    poster_path = models.CharField(max_length=200, null=True)
     # genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     # Keywords = models.ManyToManyField(Keyword, related_name="movies")
 
