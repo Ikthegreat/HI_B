@@ -6,7 +6,9 @@ import json
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "server.settings")
 django.setup()
 
-from movies.models import Keyword
+from movies.models import Movie
+import requests
+import json
 
 lst = []
 
@@ -24,20 +26,14 @@ def get_keywords_data():
             }
             response = requests.get(url, headers=headers).json()
             keywords = response.get("keywords", [])
-            for keyword in keywords:
-                keyword_id = keyword.get("id")
-                keyword_name = keyword.get("name")
-                keyword_data = {
-                    "pk": keyword_id,
-                    "model": "movies.keyword",
-                    "fields": {
-                        "keyword_id": keyword_id,
-                        "keyword_name": keyword_name,
-                    },
-                }
-                lst.append(keyword_data)
+            movie_keywords = {
+                "movie_id": movie_id,
+                "keywords": [keyword.get("id") for keyword in keywords],
+            }
+            lst.append(movie_keywords)
+            print(movie_keywords)
 
-    with open("movies_keywords_data.json", "w", encoding="utf-8") as w:
+    with open("movies_keywords.json", "w", encoding="utf-8") as w:
         json.dump(lst, w, indent="\t", ensure_ascii=False)
 
 
