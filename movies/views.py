@@ -143,16 +143,18 @@ def movie_detail(request, movie_pk):
 
 @api_view(["POST"])
 def like_movie(request, movie_pk):
-    movie = get_object_or_404(Movie, pk=movie_pk)
-    user = request.user
-    if movie.like_user.filter(pk=user.pk).exists():
-        movie.like_user.remove(user)
-        serializer = MovieSerializer(movie)
-        return Response(serializer.data)
-    else:
-        movie.like_user.add(user)
-        serializer = MovieSerializer(movie)
-        return Response(serializer.data)
+    if request.user.is_authenticated:
+        movie = Movie.objects.get(pk=movie_pk)
+        if movie.like_users.filter(pk=request.user.pk).exists():
+            movie.like_users.remove(request.user)
+            is_liked = False
+        else:
+            movie.like_users.add(request.user)
+            is_liked = True
+        context = {
+            "is_liked": is_liked,
+        }
+        return JsonResponse(context)
 
 
 @api_view(["POST"])
