@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from django.http import JsonResponse
 from .models import *
+from accounts.models import *
 from .serializers import (
     MovieListSerializer,
     CommentListSerializer,
@@ -15,7 +16,8 @@ from .serializers import (
 )
 import random
 import requests
-from accounts.models import UserSelectMovie
+from accounts.models import User, UserSelectMovie
+from django.contrib.auth import get_user_model
 # Create your views here.
 
 
@@ -29,8 +31,68 @@ def main(request):
         random_movies_data = random.sample(data, 5)  # upcoming중 5개 선택
 
         # 사용자 기반 키워드 영화
-        select_movies = Select_movie.objects.all()
-        select_movie_ids = [movie.movie_id for movie in select_movies]
+        user_id = request.user.id
+        user_select_movies = UserSelectMovie.objects.all()
+        movie_id_lst = []
+        for user_select_movie in user_select_movies:
+            movie_id = user_select_movie.select_movie_id 
+            movie_id_lst.append(movie_id)
+        print(movie_id_lst)
+        user_select_movies_m = Select_movie.objects.filter(id__in = movie_id_lst)
+        # print(user_select_movies_m)
+        select_movie_ids = []
+        for movie in user_select_movies_m:
+            movie_id = movie.movie_id
+            select_movie_ids.append(movie_id)
+        print(select_movie_ids)
+        # print(movie_ids_list)
+        # 이제여기서 select_movie 다시 참조해서 filter 걸어서 movie_id 세개 넣기만하면 끝임
+        # return JsonResponse(data, safe=False)
+        # print(user_select_movies)
+        # select_movies = []  # select_movie 객체들을 저장할 리스트
+
+        # for user_select_movie in user_select_movies:
+        #     select_movie_id = user_select_movie.select_movie_id
+        #     print(select_movie)
+        #     print(select_movie)
+        #     print(select_movie)
+        #     print(select_movie)
+        #     # select_movie_id를 사용하여 해당 select_movie를 가져올 수 있습니다
+        #     select_movie = Select_movie.objects.get(id=select_movie_id)
+        #     select_movies.append(select_movie)  # select_movie를 리스트에 추가
+
+        # select_movies 리스트를 반환
+        # return JsonResponse(select_movies, safe=False)
+        # select_movies = user.select_movies.values_list('id', flat=True)
+        # # return JsonResponse(select_movies, safe=False)
+        # response_data = {
+        #     "user_id": user.id,
+        #     "username": user.username,
+        #     "select_movies": list(select_movies)
+        # }
+        # return JsonResponse(response_data)
+        # accounts_user_select_movies의 movie_id들을 리스트로 만들기
+
+        # select_movies의 movie_id들을 리스트로 만들기
+        # 위에서 구한 user_movies_list를 활용하여 필요한 작업 수행
+        # ...
+
+        # user_info = {
+        #     "username": user_name.username,
+        #     "user_movies": user_movies_list,
+        # }
+        # return JsonResponse(user_info)
+    
+
+
+        
+        # select_movies = Select_movie.objects.all()
+        # select_movie_ids = [movie.movie_id for movie in select_movies]
+        # select_movie_ids의 값과 일치하는 keyword_id를 갖는 키워드들을 가져옴
+        keywords = Keyword.objects.filter(
+            movies__movie_id__in=select_movie_ids
+        ).distinct()
+        # return JsonResponse(select_movie_ids, safe=False)
         # select_movie_ids의 값과 일치하는 keyword_id를 갖는 키워드들을 가져옴
         keywords = Keyword.objects.filter(
             movies__movie_id__in=select_movie_ids
@@ -147,7 +209,8 @@ def select(request):
         return Response(serializer.data)
 
     elif request.method == "POST":
-        user_id = request.user.id
+        user = request.user  # 현재 로그인한 사용자의 인스턴스
+        UserSelectMovieModel = get_user_model().select_movies.through
         for selected in request.data["movie_id"]:
             movie = get_object_or_404(Movie, id=selected)
             select_movie = Select_movie(
@@ -158,11 +221,20 @@ def select(request):
                 poster_path=movie.poster_path,
             )
             select_movie.save()
-            user_select_movie = UserSelectMovie(
-                user_id=user_id,
-                select_movie_id=movie.movie_id,
+            user_select_movie = UserSelectMovieModel.objects.create(
+                user=user,
+                select_movie=select_movie,
             )
-            user_select_movie.save()
+        # user = request.user  # 현재 로그인한 사용자의 인스턴스
+        # UserSelectMovie = get_user_model().select_movies.through
+        # for selected in request.data["movie_id"]:
+        #     movie_id = selected
+        #     user_id = user.id
+
+        #     user_select_movie = UserSelectMovie.objects.create(
+        #         user_id=user_id,
+        #         select_movie_id=movie_id,
+        #     )
         return Response("Success")
     # elif request.method == "POST":
         # user_id = request.user.id  # 현재 인증된 사용자의 ID를 가져옴
