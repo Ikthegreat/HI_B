@@ -15,6 +15,7 @@ from .serializers import (
     CommentSerializer,
 )
 import random
+from collections import Counter
 import requests
 from accounts.models import User, UserSelectMovie
 from django.contrib.auth import get_user_model
@@ -28,11 +29,11 @@ def main(request):
         upcoming_movies = get_list_or_404(Upcoming_movie)
         serializer = MovieListSerializer(upcoming_movies, many=True)
         data = serializer.data
-        random_movies_data = random.sample(data, 5)  # upcoming중 5개 선택
+        random_movies_data = random.sample(data, 10)  # upcoming중 5개 선택
 
         # 사용자 기반 키워드 영화
         user_id = request.user.id
-        user_select_movies = UserSelectMovie.objects.all()
+        user_select_movies = UserSelectMovie.objects.filter(user_id=user_id)
         movie_id_lst = []
         for user_select_movie in user_select_movies:
             movie_id = user_select_movie.select_movie_id 
@@ -98,6 +99,7 @@ def main(request):
             movies__movie_id__in=select_movie_ids
         ).distinct()
         keyword_ids = list(keywords.values_list("keyword_id", flat=True))
+        print(keyword_ids)
         # 여기서 세개의 movie_id를 filter 활용해서 movie_keyword를 뒤져서 해당 키워드들을 저장함
         # 그 다음에 각각의 movie_id를 돌면서 keyword_id랑 이중 for문 돌면서 같으면 cnt +=1 하고 다돌면
         # cnt랑 movie_id랑 같이 저장해 다돌면 cnt기준으로 sort해서 가장 높은 순대로 5개를 새로운 recommend model에 저장해
@@ -132,66 +134,61 @@ def main(request):
             common_keywords = set(keyword_id).intersection(set(keyword_ids))
             common_count = len(common_keywords)
             if movie_id not in select_movie_ids:
-                recommend_data.append({'movie_id': movie_id, 'common_count': common_count})
-            
+                movie = Movie.objects.get(movie_id=movie_id)
+                recommend_data.append({
+                    "id": movie.id,
+                    "movie_id": movie.movie_id,
+                    "poster_path": movie.poster_path,
+                    "common_count" : common_count
+                })    
         # recommend_data를 공통 요소 개수를 기준으로 내림차순 정렬
         recommend_data = sorted(recommend_data, key=lambda x: x['common_count'], reverse=True)
-
+        recommend_datas = recommend_data[:10]
+        # return JsonResponse(recommend_data, safe=False)
         # 상위 5개 추천 결과를 JsonResponse로 반환
-        return JsonResponse(recommend_data[:5], safe=False)
+        # return JsonResponse(recommend_data[:5], safe=False)
         # recommend_data = sorted(recommend_data, key=itemgetter('common_count'), reverse=True)
         # return JsonResponse(recommend_data, safe=False)
         
-        serializer = MovieListSerializer(all_movies, many=True)
-        serialized_movies = serializer.data
+        # serializer = MovieListSerializer(all_movies, many=True)
+        # serialized_movies = serializer.data
 
-        # like_keywords = []
-        # recommend_movies = []
-        # if select_movie_ids:
-        #     for movie_id in select_movie_ids:
-        #         url = f"https://api.themoviedb.org/3/movie/{movie_id}/keywords"
-
-        #         headers = {
-        #             "accept": "application/json",
-        #             "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZmQ1M2FlY2QyNzA2ZTk0ODY4MDg1MGQ2ZjU4MTFhNyIsInN1YiI6IjYzZDIwM2NjZmJhNjI1MDA5ZGU5OGQzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H_-DEfImhV3nDonoaVeNuu-ya8KT8FxU0wesg-zT0Fg",
-        #         }
-
-        #         response = requests.get(url, headers=headers).json()
-        #         keywords = response.get("keywords", [])
-        #         for keyword in keywords:
-        #             like_keywords.append(keyword.get("id"))
-        #     movie_ids = [movie["movie_id"] for movie in serialized_movies]
-        #     for movie_id in movie_ids:
-        #         url = f"https://api.themoviedb.org/3/movie/{movie_id}/keywords"
-
-        #         headers = {
-        #             "accept": "application/json",
-        #             "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZmQ1M2FlY2QyNzA2ZTk0ODY4MDg1MGQ2ZjU4MTFhNyIsInN1YiI6IjYzZDIwM2NjZmJhNjI1MDA5ZGU5OGQzOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.H_-DEfImhV3nDonoaVeNuu-ya8KT8FxU0wesg-zT0Fg",
-        #         }
-        #         response = requests.get(url, headers=headers).json()
-        #         keywords = response.get("keywords", [])
-        #         movie_keywords = []
-        #         cnt = 0
-        #         for keyword in keywords:
-        #             movie_keywords.append(keyword.get("id"))
-        # for like_keyword in like_keywords:
-        #     for movie_keyword in movie_keywords:
-        #         if like_keyword == movie_keyword:
-        #             cnt += 1
-        #     intersection = len(
-        #         list(set(like_keywords).intersection(movie_keywords))
-        #     )
-        #     recommend_movies.append([intersection, movie_id])
-        # recommend_movies.sort(reverse=True)
-        # return JsonResponse(recommend_movies, safe=False)
         # nowplaying data (5,9)
         nowplaying_movies = get_list_or_404(Nowplaying_movie)
         serializer = MovieListSerializer(nowplaying_movies, many=True)
         data = serializer.data
-        nowplaying_data = random.sample(data, 5)
+        nowplaying_data = random.sample(data, 10)
         # 사람들이 좋아요 많이한 영화 5개
+        
 
-        return JsonResponse((random_movies_data, nowplaying_data), safe=False)
+        # # Movie 모델의 인스턴스에서 like_movies 필드를 기준으로 movie_id의 빈도를 계산
+        # movie_id_counter = Counter(
+        #     Movie.like_movies.through.objects.values_list("movie_id", flat=True)
+        # )
+
+        # # 빈도가 가장 많은 상위 5개의 movie_id를 추출
+        # top_5_movie_ids = [movie_id for movie_id, _ in movie_id_counter.most_common(10)]
+        # Movie 모델의 인스턴스에서 like_movies 필드를 기준으로 movie_id의 빈도를 계산
+        movie_id_counter = Counter(
+            Movie.like_movies.through.objects.values_list("movie_id", flat=True)
+        )
+
+        # 빈도가 가장 많은 상위 5개의 movie_id를 추출
+        top_10_movie_ids_with_count = [{'movie_id': movie_id, 'count': count} for movie_id, count in movie_id_counter.most_common(10)]
+
+        # top_5_movie_ids_with_count에 대한 추가 정보 추출
+        top_10_like_movie = []
+        for item in top_10_movie_ids_with_count:
+            movie_instance = Movie.objects.get(movie_id=item['movie_id'])
+            top_10_like_movie.append({
+                "id": movie_instance.id,
+                "movie_id": movie_instance.movie_id,
+                "poster_path": movie_instance.poster_path,
+                "count": item['count']
+            })
+
+        # return JsonResponse(top_5_movie_ids, safe=False)
+        return JsonResponse((random_movies_data, nowplaying_data, recommend_datas, top_10_like_movie), safe=False)
         # return Response(data)
     elif request.method == "POST":
         serializer = MovieListSerializer(data=request.data)
@@ -290,65 +287,65 @@ def like_movie(request, movie_pk):
         return JsonResponse(context)
 
 
-@api_view(["POST"])
-def comment_movie_like(request, comment_pk):
-    comment = get_object_or_404(Comment, pk=comment_pk)
-    user = request.user
-    if comment.movie_comment_like.filter(pk=user.pk).exists():
-        comment.movie_comment_like.remove(user)
-        serializer = MovieSerializer(comment)
-        return Response(serializer.data)
-    else:
-        comment.movie_comment_like.add(user)
-        serializer = MovieSerializer(comment)
-        return Response(serializer.data)
+# @api_view(["POST"])
+# def comment_movie_like(request, comment_pk):
+#     comment = get_object_or_404(Comment, pk=comment_pk)
+#     user = request.user
+#     if comment.movie_comment_like.filter(pk=user.pk).exists():
+#         comment.movie_comment_like.remove(user)
+#         serializer = MovieSerializer(comment)
+#         return Response(serializer.data)
+#     else:
+#         comment.movie_comment_like.add(user)
+#         serializer = MovieSerializer(comment)
+#         return Response(serializer.data)
 
 
-# 전체 댓글 serializers
-@api_view(["GET", "POST"])
-def comment_list_or_create(request, movie_pk):
-    def comment_list():
-        comments = get_list_or_404(Comment, movie_id=movie_pk)[::-1]
-        serialiezers = CommentListSerializer(comments, many=True)
-        return Response(serialiezers.data)
+# # 전체 댓글 serializers
+# @api_view(["GET", "POST"])
+# def comment_list_or_create(request, movie_pk):
+#     def comment_list():
+#         comments = get_list_or_404(Comment, movie_id=movie_pk)[::-1]
+#         serialiezers = CommentListSerializer(comments, many=True)
+#         return Response(serialiezers.data)
 
-    def create_comment():
-        movie = get_object_or_404(Movie, movie_id=movie_pk)
-        serializer = CommentSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save(user=request.user, movie=movie)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+#     def create_comment():
+#         movie = get_object_or_404(Movie, movie_id=movie_pk)
+#         serializer = CommentSerializer(data=request.data)
+#         if serializer.is_valid(raise_exception=True):
+#             serializer.save(user=request.user, movie=movie)
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    if request.method == "GET":
-        return comment_list()
-    elif request.method == "POST":
-        return create_comment()
+#     if request.method == "GET":
+#         return comment_list()
+#     elif request.method == "POST":
+#         return create_comment()
 
 
-@api_view(["PUT", "DELETE"])
-def comment_update_or_delete(request, movie_pk, comment_pk):
-    movie = get_object_or_404(Movie, pk=movie_pk)
-    comment = get_object_or_404(Comment, pk=comment_pk)
+# @api_view(["PUT", "DELETE"])
+# def comment_update_or_delete(request, movie_pk, comment_pk):
+#     movie = get_object_or_404(Movie, pk=movie_pk)
+#     comment = get_object_or_404(Comment, pk=comment_pk)
 
-    def update_comment():
-        if request.user == comment.user:
-            serializer = CommentSerializer(instance=comment, data=request.data)
-            if serializer.is_valid(raise_exception=True):
-                serializer.save()
-                comments = movie.comments.all()
-                serializer = CommentSerializer(comments, many=True)
-                return Response(serializer.data)
+#     def update_comment():
+#         if request.user == comment.user:
+#             serializer = CommentSerializer(instance=comment, data=request.data)
+#             if serializer.is_valid(raise_exception=True):
+#                 serializer.save()
+#                 comments = movie.comments.all()
+#                 serializer = CommentSerializer(comments, many=True)
+#                 return Response(serializer.data)
 
-    def delete_comment():
-        if request.user == comment.user:
-            comment.delete()
-            comments = movie.comments.all()
-            serializer = CommentSerializer(comments, many=True)
-            return Response(serializer.data)
+#     def delete_comment():
+#         if request.user == comment.user:
+#             comment.delete()
+#             comments = movie.comments.all()
+#             serializer = CommentSerializer(comments, many=True)
+#             return Response(serializer.data)
 
-    if request.method == "PUT":
-        if request.user == comment.user:
-            return update_comment()
-    elif request.method == "DELETE":
-        if request.user == comment.user:
-            return delete_comment()
+#     if request.method == "PUT":
+#         if request.user == comment.user:
+#             return update_comment()
+#     elif request.method == "DELETE":
+#         if request.user == comment.user:
+#             return delete_comment()
