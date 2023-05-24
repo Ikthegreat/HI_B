@@ -29,7 +29,7 @@ def main(request):
         upcoming_movies = get_list_or_404(Upcoming_movie)
         serializer = MovieListSerializer(upcoming_movies, many=True)
         data = serializer.data
-        random_movies_data = random.sample(data, 10)  # upcoming중 5개 선택
+        upcoming_data = random.sample(data, 10)  # upcoming중 5개 선택
 
         # 사용자 기반 키워드 영화
         user_id = request.user.id
@@ -188,7 +188,7 @@ def main(request):
             })
 
         # return JsonResponse(top_5_movie_ids, safe=False)
-        return JsonResponse((random_movies_data, nowplaying_data, recommend_datas, top_10_like_movie), safe=False)
+        return JsonResponse((recommend_datas , top_10_like_movie, upcoming_data, nowplaying_data), safe=False)
         # return Response(data)
     elif request.method == "POST":
         serializer = MovieListSerializer(data=request.data)
@@ -201,7 +201,7 @@ def main(request):
 def select(request):
     if request.method == "GET":
         movies = get_list_or_404(Movie)
-        select_movies = movies[:20]
+        select_movies = movies[:20] # 이거 랜덤으로 변경해 줘야댐
         serializer = MovieListSerializer(select_movies, many=True)
         return Response(serializer.data)
 
@@ -255,11 +255,20 @@ def select(request):
 def movie_detail(request, movie_pk):
     movie = get_object_or_404(Movie, pk=movie_pk)
 
+    # if request.method == "GET":
+    #     serializer = MovieSerializer(movie)
+    #     print(serializer.data)
+    #     return Response(serializer.data)
     if request.method == "GET":
-        serializer = MovieSerializer(movie)
-        print(serializer.data)
-        return Response(serializer.data)
-
+        user_ids = movie.like_movies.values_list("id", flat=True)
+        user_movies = (
+            Movie.like_movies.through.objects
+            .filter(Q(movie_id=movie.movie_id) & Q(user_id__in=user_ids))
+            .values_list("user_id", flat=True)
+        )
+        print({"user_ids" : list(user_movies)})
+        return Response({"user_ids": list(user_movies)}) # axios요청을 보내게 끔 고쳐야함
+    
     elif request.method == "DELETE":
         movie.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)

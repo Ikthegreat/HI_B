@@ -12,8 +12,9 @@ lst = []
 
 
 def get_keywords_data():
-    for i in range(1, 5):
+    for i in range(1, 200):
         request_url = f"https://api.themoviedb.org/3/movie/popular?api_key=cfd53aecd2706e948680850d6f5811a7&language=ko-KR&page={i}"
+        print(request_url)
         movies = requests.get(request_url).json()
         for movie in movies["results"]:
             movie_id = movie["id"]
@@ -37,7 +38,7 @@ def get_keywords_data():
                 }
                 lst.append(keyword_data)
 
-    with open("movies_keywords_data.json", "w", encoding="utf-8") as w:
+    with open("movie_keywords_data.json", "w", encoding="utf-8") as w:
         json.dump(lst, w, indent="\t", ensure_ascii=False)
 
 

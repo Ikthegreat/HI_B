@@ -98,7 +98,8 @@ from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from django.contrib.auth import get_user_model
 from .serializers import UserSerializer, UserImgSerializer
-
+from movies.models import Movie
+from movies.serializers import MovieSerializer
 # from .models import Comment, Profile
 from rest_framework.response import Response
 
@@ -139,9 +140,20 @@ def follow(request, username):
     return Response(serializer.data)
 
 
+# @api_view(["GET"])
+# def user_profile(request, username):
+#     user = get_object_or_404(get_user_model(), username=username)
+#     id = user.id
+#     if request.method == "GET":
+#         serializer = UserSerializer(user)
+#         return Response(serializer.data)
+
 @api_view(["GET"])
 def user_profile(request, username):
     user = get_object_or_404(get_user_model(), username=username)
-    if request.method == "GET":
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
+    user_movies = user.like_movies.values_list("movie_id", flat=True)  # 해당 사용자의 좋아하는 영화의 movie_id 목록
+    movies = Movie.objects.filter(movie_id__in=user_movies)  # movie_id 목록에 해당하는 영화들을 가져옴
+
+    serializer = MovieSerializer(movies, many=True)  # 영화 정보를 직렬화
+    print(serializer.data)
+    return Response(serializer.data)
