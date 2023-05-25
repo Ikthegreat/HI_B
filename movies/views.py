@@ -207,7 +207,7 @@ def select(request):
     #     serializer = MovieListSerializer(select_movies, many=True)
     #     return Response(serializer.data)
     if request.method == "GET":
-        movies = list(Movie.objects.all()[:50])  # 처음 50개의 영화만 가져옴
+        movies = list(Movie.objects.all())  # 처음 50개의 영화만 가져옴
         random_movies = random.sample(movies, 20)  # 50개 중에서 20개를 무작위로 선택
         serializer = MovieListSerializer(random_movies, many=True)
         return Response(serializer.data)
