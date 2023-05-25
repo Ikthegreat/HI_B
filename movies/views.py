@@ -274,18 +274,22 @@ def movie_detail(request, movie_pk):
         )
         print({"user_ids" : list(user_movies)})
         serializer_data = {}
+        response_data = []
         for user in user_movies:
             user = get_object_or_404(get_user_model(), id = user)
             serializer = UserSerializer(user)
-            # serializer_data.append(serializer.data)
-            print(serializer.data['username'])
-            print(serializer.data['profileimage'])
-            # if serializer.data['profileimage']:
-            serializer_data[serializer.data['username']] = serializer.data['profileimage']
-            # else:
-                # serializer_data[serializer.data['username']] = 0
+            response_data.append(serializer.data)
+            # # serializer_data.append(serializer.data)
+            # print(serializer.data['username'])
+            # print(serializer.data['profileimage'])
+            # # if serializer.data['profileimage']:
+            # serializer_data['username'] = serializer.data['u']
+            # serializer_data[serializer.data['username']] = serializer.data['profileimage']
+            # response_data.append(serializer_data)
+            # # else:
+            #     # serializer_data[serializer.data['username']] = 0
 
-        return Response(serializer_data)
+        return Response(response_data)
         # return Response({"user_ids": list(user_movies)}) # axios요청을 보내게 끔 고쳐야함
     
     elif request.method == "DELETE":

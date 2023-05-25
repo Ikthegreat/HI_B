@@ -156,4 +156,7 @@ def user_profile(request, username):
 
     serializer = MovieSerializer(movies, many=True)  
     print(serializer.data)
-    return Response(serializer.data)
+    return Response({
+        "user": UserSerializer(user).data,
+        "movies": serializer.data
+        })
