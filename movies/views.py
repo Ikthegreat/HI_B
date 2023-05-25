@@ -269,11 +269,18 @@ def movie_detail(request, movie_pk):
             .values_list("user_id", flat=True)
         )
         print({"user_ids" : list(user_movies)})
-        serializer_data = []
+        serializer_data = {}
         for user in user_movies:
             user = get_object_or_404(get_user_model(), id = user)
             serializer = UserSerializer(user)
-            serializer_data.append(serializer.data)
+            # serializer_data.append(serializer.data)
+            print(serializer.data['username'])
+            print(serializer.data['profileimage'])
+            # if serializer.data['profileimage']:
+            serializer_data[serializer.data['username']] = serializer.data['profileimage']
+            # else:
+                # serializer_data[serializer.data['username']] = 0
+
         return Response(serializer_data)
         # return Response({"user_ids": list(user_movies)}) # axios요청을 보내게 끔 고쳐야함
     
