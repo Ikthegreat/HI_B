@@ -5,7 +5,7 @@ import json
 def get_upcoming_movie_datas():
     total_data = []
 
-    for i in range(1, 5):
+    for i in range(1, 3):
         request_url = f"https://api.themoviedb.org/3/movie/upcoming?api_key=cfd53aecd2706e948680850d6f5811a7&language=ko-KR&page={i}"
         print(request_url)
         movies = requests.get(request_url).json()
@@ -23,13 +23,13 @@ def get_upcoming_movie_datas():
 
                 data = {
                     "pk": movie['id'],
-                    "model": "movies.nowplaying_movie",
+                    "model": "movies.upcoming_movie",
                     "fields": fields
                 }
 
                 total_data.append(data)
 
-    with open("nowplaying_movies.json", "w", encoding="utf-8") as w:
+    with open("upcoming_movies.json", "w", encoding="utf-8") as w:
         json.dump(total_data, w, indent="\t", ensure_ascii=False)
 
 get_upcoming_movie_datas()

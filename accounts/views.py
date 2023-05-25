@@ -154,6 +154,6 @@ def user_profile(request, username):
     user_movies = user.like_movies.values_list("movie_id", flat=True)  # 해당 사용자의 좋아하는 영화의 movie_id 목록
     movies = Movie.objects.filter(movie_id__in=user_movies)  # movie_id 목록에 해당하는 영화들을 가져옴
 
-    serializer = MovieSerializer(movies, many=True)  # 영화 정보를 직렬화
+    serializer = MovieSerializer(movies, many=True)  
     print(serializer.data)
     return Response(serializer.data)
