@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404, redirect
+from django.db.models import Q
 from rest_framework.response import Response
 from operator import itemgetter
 # from rest_framework.request import Request
@@ -8,6 +9,7 @@ from rest_framework import status
 from django.http import JsonResponse
 from .models import *
 from accounts.models import *
+from accounts.serializers import UserSerializer
 from .serializers import (
     MovieListSerializer,
     CommentListSerializer,
@@ -267,7 +269,13 @@ def movie_detail(request, movie_pk):
             .values_list("user_id", flat=True)
         )
         print({"user_ids" : list(user_movies)})
-        return Response({"user_ids": list(user_movies)}) # axios요청을 보내게 끔 고쳐야함
+        serializer_data = []
+        for user in user_movies:
+            user = get_object_or_404(get_user_model(), id = user)
+            serializer = UserSerializer(user)
+            serializer_data.append(serializer.data)
+        return Response(serializer_data)
+        # return Response({"user_ids": list(user_movies)}) # axios요청을 보내게 끔 고쳐야함
     
     elif request.method == "DELETE":
         movie.delete()
