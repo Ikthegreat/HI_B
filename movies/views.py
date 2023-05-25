@@ -201,12 +201,16 @@ def main(request):
 # @login_required
 @api_view(["GET", "POST"])
 def select(request):
+    # if request.method == "GET":
+    #     movies = get_list_or_404(Movie)
+    #     select_movies = movies[:20] # 이거 랜덤으로 변경해 줘야댐
+    #     serializer = MovieListSerializer(select_movies, many=True)
+    #     return Response(serializer.data)
     if request.method == "GET":
-        movies = get_list_or_404(Movie)
-        select_movies = movies[:20] # 이거 랜덤으로 변경해 줘야댐
-        serializer = MovieListSerializer(select_movies, many=True)
+        movies = list(Movie.objects.all()[:50])  # 처음 50개의 영화만 가져옴
+        random_movies = random.sample(movies, 20)  # 50개 중에서 20개를 무작위로 선택
+        serializer = MovieListSerializer(random_movies, many=True)
         return Response(serializer.data)
-
     elif request.method == "POST":
         user = request.user  # 현재 로그인한 사용자의 인스턴스
         UserSelectMovieModel = get_user_model().select_movies.through
